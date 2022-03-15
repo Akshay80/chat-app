@@ -1,9 +1,16 @@
 import React from 'react';
-import Router from './Router';
+import WelcomeScreen from "./WelcomeScreen";
+import ChatScreen from "./ChatScreen";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <Router />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/chat" component={ChatScreen} />
+        <Route path="/" component={WelcomeScreen} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
